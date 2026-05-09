@@ -1,14 +1,16 @@
 {
   "name": "claude-pty-bridge",
-  "version": "1.0.0",
-  "description": "A PTY bridge that enables programmatic interaction with Claude Code's interactive REPL mode via a virtual terminal, bypassing TTY detection.",
+  "version": "2.0.0",
+  "description": "Multi-agent orchestration engine for Claude Code — spawn parallel PTY sessions with YAML-driven workflows and human-in-the-loop checkpoints.",
   "main": "bridge.js",
   "bin": {
-    "claude-pty-bridge": "./bridge.js"
+    "claude-pty-bridge": "./bridge.js",
+    "claude-workflow": "./orchestrator.js"
   },
   "scripts": {
     "start": "node bridge.js",
-    "build": "pkg . --targets node20-win-x64 --output dist/claude-pty-bridge.exe --options max_old_space_size=4096"
+    "workflow": "node orchestrator.js",
+    "build": "npx @yao-pkg/pkg . --targets node20-win-x64 --output dist/claude-pty-bridge.exe"
   },
   "keywords": [
     "claude",
@@ -18,16 +20,21 @@
     "bridge",
     "automation",
     "ai",
-    "agent"
+    "agent",
+    "multi-agent",
+    "orchestrator",
+    "workflow"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "js-yaml": "^4.1.0",
     "node-pty": "^1.0.0"
   },
   "pkg": {
     "assets": [
-      "node_modules/node-pty/build/Release/*.node"
+      "node_modules/node-pty/prebuilds/**/*",
+      "workflows/**/*"
     ]
   }
 }
