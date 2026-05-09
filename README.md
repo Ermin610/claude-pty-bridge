@@ -53,7 +53,7 @@ The bridge sits between your automation layer and Claude Code:
 
 ```bash
 # Clone & install
-git clone https://github.com/YOUR_USERNAME/claude-pty-bridge.git
+git clone https://github.com/Ermin610/claude-pty-bridge.git
 cd claude-pty-bridge
 npm install
 
@@ -74,7 +74,7 @@ claude-pty-bridge /path/to/your/project
 ### Option C — Standalone executable (no Node.js required)
 
 Download the pre-built binary from the
-[Releases](https://github.com/YOUR_USERNAME/claude-pty-bridge/releases) page:
+[Releases](https://github.com/Ermin610/claude-pty-bridge/releases) page:
 
 | Platform | File |
 |----------|------|
